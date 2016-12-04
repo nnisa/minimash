@@ -5,6 +5,8 @@ $('.message a').click(function () {
 	}, "slow");
 });
 
+///////////////////////////////////////////////////////////////
+
 $('.signup').click(function () {
 	console.log($(".name").val());
 	console.log($(".password").val());
@@ -17,7 +19,26 @@ $('.signup').click(function () {
 		email : $(".email").val(),
 		location : $(".location").val()
 	};
-	
+	console.log(data);
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', "https://nfn80qiiqk.execute-api.us-east-1.amazonaws.com/prod", true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.onload = function () {
+		if (xhr.status == 200) {
+		}
+	};
+	xhr.send(JSON.stringify(data));
+});
+
+///////////////////////////////////////////////////////////////
+
+$('.sign-in').click(function(){
+	var data = {
+		email2 : $(".email-2").val(),
+		password2 : $(".password-2").val(),
+	};
+
 	console.log(data);
 
 	var xhr = new XMLHttpRequest();
@@ -30,3 +51,7 @@ $('.signup').click(function () {
 	xhr.send(JSON.stringify(data));
 
 });
+
+
+
+
