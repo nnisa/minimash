@@ -42,14 +42,16 @@ $('.sign-in').click(function(){
 	console.log(data);
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', "https://nfn80qiiqk.execute-api.us-east-1.amazonaws.com/prod", true);
+	
+	xhr.open('PUT', "https://nfn80qiiqk.execute-api.us-east-1.amazonaws.com/prod", true);
+
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.onload = function () {
 		if (xhr.status == 200) {
 		}
 	};
+	
 	xhr.send(JSON.stringify(data));
-
 });
 
 
